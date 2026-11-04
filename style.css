@@ -1,0 +1,98 @@
+@import url('https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+body {
+    margin: 0;
+    padding: 0;
+    background: #59036B;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    font-family: "Prompt", sans-serif;
+}
+header {
+    height: 6vh;
+}
+#main-container {
+    background: white;
+    height: 93vh;
+    width: 99.5%;
+    align-self: center;
+    border-radius: 13px;
+    justify-self: flex-end;
+    display: flex;
+    flex-direction: row;
+}
+
+#proifle-sec {
+    background: #720388;
+    width: 15%;
+    border-radius: 13px;
+}
+
+#mail-sec {
+    display: flex;
+    flex-direction: column;
+    width: 85%;
+}
+
+#mail-sec hr {
+    background: #9f0dbd;
+    height: 1px;
+    width: 94%;
+    border: none;
+}
+
+.mail-header {
+    height: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.mail-header p {
+    color: #720388;
+    font-size: 19px;
+}
+
+/* emailite */
+.email {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    cursor: pointer;
+    transition: box-shadow 0.4s ease;
+    height: contain;
+}
+.already-opened {
+    background: #f9eafc;
+}
+/*
+.already-opened:hover {
+    background: #f6d8fc;
+}
+    */
+.email p {
+    margin: 0;
+    padding: 6px 8px;
+}
+
+.email:hover {
+    box-shadow: 0px 5px 5px #f6d8fc;
+}
+
+#main-button {
+    background: #59036B;
+    position: absolute;
+    right: 50px;
+    bottom: 50px;
+    color: white;
+    margin: 0;
+    height: contain;
+    border-radius: 10px;
+}
+#main-button p {
+    font-size: 26px;
+    padding: 15px 18px;
+    margin: 0;
+    font-family: "Prompt", sans-serif;
+}
