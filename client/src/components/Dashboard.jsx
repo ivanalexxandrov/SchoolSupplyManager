@@ -3,12 +3,15 @@ import { api } from '../api.js';
 import { useAuth } from '../AuthContext.jsx';
 import Sidebar from './Sidebar.jsx';
 import MailList from './MailList.jsx';
+import UserList from './UserList.jsx';
 import NewRequestModal from './NewRequestModal.jsx';
 import RequestModal from './RequestModal.jsx';
 
 export default function Dashboard() {
   const { user } = useAuth();
   const [items, setItems] = useState([]);
+
+  const [view, setView] = useState('requests');
   const [filter, setFilter] = useState('all');
   const [openId, setOpenId] = useState(null);
   const [creating, setCreating] = useState(false);
@@ -34,13 +37,13 @@ export default function Dashboard() {
     <>
       <header />
       <div id="main-container">
-        <Sidebar filter={filter} onFilter={setFilter} counts={counts} />
+        <Sidebar view={view} onView={setView} filter={filter} onFilter={setFilter} counts={counts} />
         <div className="content">
           {error && <div className="form-error">{error}</div>}
-          <MailList items={visible} onOpen={setOpenId} />
+          {view === 'users' ? <UserList /> : <MailList items={visible} onOpen={setOpenId} />}
         </div>
 
-        {user.role === 'teacher' && (
+        {user.role === 'teacher' && view === 'requests' && (
           <div id="main-button" onClick={() => setCreating(true)} role="button" tabIndex={0}>
             <p>Make a Request</p>
           </div>

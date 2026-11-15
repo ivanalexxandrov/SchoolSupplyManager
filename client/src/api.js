@@ -21,5 +21,7 @@ export const api = {
   listRequests: () => request('/requests'),
   getRequest: (id) => request(`/requests/${id}`),
   createRequest: (data) => request('/requests', { method: 'POST', body: data }),
+  listUsers: () => request('/users'),
+  setRole: (id, role) => request(`/users/${id}/role`, { method: 'PATCH', body: { role } }),
   setStatus: (id, status, adminComment) => request(`/requests/${id}/status`, { method: 'PATCH', body: { status, adminComment } }),
 };

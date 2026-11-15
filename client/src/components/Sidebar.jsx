@@ -7,7 +7,7 @@ const FILTERS = [
   ['rejected', 'Отхвърлени'],
 ];
 
-export default function Sidebar({ filter, onFilter, counts }) {
+export default function Sidebar({ view, onView, filter, onFilter, counts }) {
   const { user, logout } = useAuth();
   return (
     <section id="profile-sec">
@@ -20,11 +20,20 @@ export default function Sidebar({ filter, onFilter, counts }) {
 
       <nav className="filters">
         {FILTERS.map(([key, label]) => (
-          <button key={key} className={filter === key ? 'active' : ''} onClick={() => onFilter(key)}>
+          <button
+            key={key}
+            className={view === 'requests' && filter === key ? 'active' : ''}
+            onClick={() => { onFilter(key); onView('requests'); }}
+          >
             <span>{label}</span>
             <span className="count">{counts[key]}</span>
           </button>
         ))}
+        {user.role === 'admin' && (
+          <button className={view === 'users' ? 'active' : ''} onClick={() => onView('users')}>
+            <span>Потребители</span>
+          </button>
+        )}
       </nav>
 
       <button className="logout" onClick={logout}>Изход</button>

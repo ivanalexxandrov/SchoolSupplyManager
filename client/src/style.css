@@ -173,3 +173,9 @@ button:disabled { opacity: 0.6; cursor: default; }
 .auth-card .form-error { margin: 0; }
 .link-btn { background: none; border: none; color: #720388; cursor: pointer; font-family: inherit; font-size: 14px; }
 .link-btn:hover { text-decoration: underline; }
+
+/* ---------- Users ---------- */
+.user-row { grid-template-columns: 2fr 2.5fr 1.2fr 1.2fr 1.6fr; }
+.email.user-row { cursor: default; }
+.email.user-row p:last-child { overflow: visible; }
+.btn-small { font-size: 14px; padding: 6px 12px; }

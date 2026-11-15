@@ -17,6 +17,10 @@ app.use('/api/auth', rateLimit({ windowMs: 15 * 60 * 1000, max: 100 }));
 
 app.use('/api/auth', require('./routes/auth'));
 app.use('/api/requests', require('./routes/requests'));
+<<<<<<< HEAD
+=======
+app.use('/api/users', require('./routes/users'));
+>>>>>>> multiple-admins
 
 app.use((err, req, res, next) => {
   console.error(err);
