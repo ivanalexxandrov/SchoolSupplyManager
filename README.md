@@ -1,5 +1,7 @@
 # SchoolSupply
 
+Линк за презентацията: https://docs.google.com/presentation/d/1bIUJ0AKOwcesc1Jn2uSGHD8hRbOeGmXJ9xO8BGmNEqg/edit?usp=sharing 
+
 Система за заявки за материали в училище (Node.js + Express + Sequelize/SQLite + React/Vite).
 
 ## Стартиране
